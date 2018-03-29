@@ -1,26 +1,22 @@
-/**
- * Naam: Pieter-Andries van der Berg
- * Leerlijn: Inleiding programmeren
- * Datum: 29/09/2018
- * Applicatie: BMI-Calculator
- *
- */
-
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class BMI_Calculator {
-
+    /**
+     * Naam: Pieter-Andries van der Berg
+     * Leerlijn: Inleiding programmeren
+     * Datum: 29/09/2018
+     * Applicatie: BMI-Calculator
+     *
+     */
 
 
     //Main method met het menu die het programma naar de juiste methode stuurt.
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        ArrayList<Double> myArray = new ArrayList<Double>(); //nieuwe arrayList genaamd myArray
+        ArrayList<Double> myArray = new ArrayList<>(); //nieuwe arrayList genaamd myArray
 
 
         //Hier is een menu gemaakt met een keuze mogelijkheid voor Metric / Imperial / of om de applicatie af te sluiten
@@ -59,7 +55,7 @@ public class BMI_Calculator {
 
 
     //Method imperial calculator
-    public static void ImperialCalculator(ArrayList<Double> myArray) {
+    private static void ImperialCalculator(ArrayList<Double> myArray) {
         Scanner userInput = new Scanner(System.in);
         double heightin;
         double weightlb;
@@ -100,7 +96,7 @@ public class BMI_Calculator {
 
             }
         }
-        //Laat user zijn BMI category zien
+        //Laat user zijn BMI categorie zien
         System.out.println(bmicategory(bmiimperial));
 
 
@@ -108,7 +104,7 @@ public class BMI_Calculator {
     }
 
     //Method metric calculator
-    public static void MetricCalculator(ArrayList<Double> myArray) {
+    private static void MetricCalculator(ArrayList<Double> myArray) {
         Scanner userInput = new Scanner(System.in);
         double heightmt;
         double weightkg;
@@ -119,7 +115,7 @@ public class BMI_Calculator {
         //Het programma gaat hier verder wanneer er gekozen wordt voor "Metric"
         System.out.println("Good choice to choose the metric system!\n");
 
-        //User input wordt opgeslagen in variable heigtmt
+        //User input wordt opgeslagen in variable heightmt
         System.out.print("Enter your height in Meters \n(notation: M,CM)\n");
         heightmt = userInput.nextDouble();
 
@@ -171,7 +167,7 @@ public class BMI_Calculator {
 
 
     //Een method om de imperial bmi te kunnen berekenen want we hebben machtsverheffen nodig waar ik mijn eigen method voor wou gebruiken
-    private static double powermath(double x, int y) {
+    private static double powermath(double x, @SuppressWarnings("SameParameterValue") int y) {
 
         double result = 1;
         for (int i = 0; i < y; i++) {
